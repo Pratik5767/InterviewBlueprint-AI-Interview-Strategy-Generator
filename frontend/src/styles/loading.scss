@@ -1,0 +1,63 @@
+$bg-page: #0d1117;
+$bg-card: #161b22;
+$border-color: #2a3348;
+$text-primary: #e6edf3;
+$text-muted: #7d8590;
+$accent: #ff2d78;
+
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba($bg-page, 0.85);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.loading-card {
+    background-color: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 1rem;
+    padding: 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.loading-spinner {
+    position: relative;
+    width: 52px;
+    height: 52px;
+}
+
+.spinner-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: $accent;
+    animation: spin 0.9s linear infinite;
+
+    &--delay {
+        border-top-color: rgba($accent, 0.3);
+        animation-duration: 1.4s;
+        animation-direction: reverse;
+    }
+}
+
+.loading-message {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $text-muted;
+    letter-spacing: 0.03em;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
