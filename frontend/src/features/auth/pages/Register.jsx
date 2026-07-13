@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from "react-router"
 import { useAuth } from '../hooks/useAuth'
-import { use } from 'react'
+import Loading from '../../../Loading'
+import "../auth.form.scss"
+import "../../../styles/loading.scss"
 
 
 const Register = () => {
@@ -20,9 +22,7 @@ const Register = () => {
         navigate("/")
     }
 
-    if (loading) {
-        return (<main><h1>Loading...</h1></main>)
-    }
+    if (loading) return <Loading message='Please wait...' />
 
     return (
         <main>
@@ -68,7 +68,6 @@ const Register = () => {
 
                 <p>Already have an account? <Link to={"/login"}>Login</Link></p>
             </div>
-
         </main>
     )
 }

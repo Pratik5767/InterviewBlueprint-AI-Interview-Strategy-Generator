@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router'
-import "../auth.form.scss"
 import { useAuth } from '../hooks/useAuth'
+import Loading from '../../../Loading'
+import "../auth.form.scss"
+import "../../../styles/loading.scss"
 
 
 const Login = () => {
@@ -18,9 +20,7 @@ const Login = () => {
         navigate("/")
     }
 
-    if (loading) {
-        return (<main><h1>Loading...</h1></main>)
-    }
+    if (loading) return <Loading message='Please wait...' />
 
     return (
         <main>
