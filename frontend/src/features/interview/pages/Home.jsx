@@ -1,12 +1,16 @@
 import { useRef, useState } from 'react'
-import "../styles/home.scss"
 import { useInterview } from '../hooks/useInterview'
 import { useNavigate } from "react-router"
+import { useAuth } from '../../auth/hooks/useAuth'
+import Loading from '../../../Loading'
+import "../styles/home.scss"
+import "../../../styles/loading.scss"
 
 
 const Home = () => {
 
     const { loading, generateReport, reports } = useInterview()
+    const { handleLogout } = useAuth()
     const navigate = useNavigate()
 
     const [jobDescription, setJobDescription] = useState("")
@@ -19,13 +23,7 @@ const Home = () => {
         navigate(`/interview/${data._id}`)
     }
 
-    if (loading) {
-        return (
-            <main className='loading-screen'>
-                <h1>Loading your interview plan...</h1>
-            </main>
-        )
-    }
+    if (loading) return <Loading message='Please wait...' />
 
     return (
         <div className='home-page'>
@@ -124,12 +122,16 @@ const Home = () => {
                 <div className='interview-card__footer'>
                     <span className='footer-info'>AI-Powered Strategy Generation &bull; Approx 30s</span>
 
-                    <button
-                        onClick={handleGenerateReport}
-                        className='generate-btn'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" /></svg>
-                        Generate My Interview Strategy
-                    </button>
+                    <div className='button-group'>
+                        <button
+                            onClick={handleGenerateReport}
+                            className='generate-btn'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" /></svg>
+                            Generate My Interview Strategy
+                        </button>
+
+                        <button onClick={handleLogout} className='generate-btn'>Logout</button>
+                    </div>
                 </div>
             </div>
 
@@ -144,9 +146,9 @@ const Home = () => {
                                 reports.map(report => (
                                     <li key={report._id} className='report-item' onClick={() => navigate(`/interview/${report._id}`)}>
                                         <h3>{report.title || 'Untitled Position'}</h3>
-                                        
+
                                         <p className='report-meta'>Generated on {new Date(report.createdAt).toLocaleDateString()}</p>
-                                        
+
                                         <p className={`match-score ${report.matchScore >= 80 ? 'score--high' : report.matchScore >= 60 ? 'score--mid' : 'score--low'}`}>Match Score: {report.matchScore}%</p>
                                     </li>
                                 ))
