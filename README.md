@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 ElevateCV AI
+# 🚀 InterviewBlueprint
 
 ### **AI-Powered Career Analysis & Interview Preparation Platform**
 
@@ -23,11 +23,11 @@ _Analyze your resume, compare it with job descriptions, generate personalized in
 
 # 🌟 Overview
 
-**ElevateCV AI** is a modern AI-powered career assistant that helps job seekers evaluate their resumes, compare them against job descriptions, identify skill gaps, and prepare for interviews with personalized AI-generated questions and feedback.
+**InterviewBlueprint** is a modern AI-powered career assistant that helps job seekers evaluate their resumes, compare them against job descriptions, identify skill gaps, and prepare for interviews with personalized AI-generated questions and feedback.
 
-Rather than practicing random interview questions, ElevateCV AI analyzes your unique profile and provides actionable insights to improve your chances of landing your next role.
+Rather than practicing random interview questions, InterviewBlueprint analyzes your unique profile and provides actionable insights to improve your chances of landing your next role.
 
-Whether you're a student, fresher, or experienced developer, ElevateCV AI helps you prepare with confidence.
+Whether you're a student, fresher, or experienced developer, InterviewBlueprint helps you prepare with confidence.
 
 ---
 
@@ -127,7 +127,7 @@ Whether you're a student, fresher, or experienced developer, ElevateCV AI helps 
 
 ### Frontend
 
-- ⚛ React
+- React
 - React Router
 - Context API
 - Axios
@@ -144,7 +144,7 @@ Whether you're a student, fresher, or experienced developer, ElevateCV AI helps 
 - Multer
 - Zod Validation
 
-### AI
+### AI Integration
 
 - Google Gemini API
 - Google GenAI SDK
@@ -160,7 +160,7 @@ Whether you're a student, fresher, or experienced developer, ElevateCV AI helps 
 # 📂 Folder Structure
 
 ```text
-ElevateCV AI
+InterviewBlueprint
 │
 ├── backend
 |   ├── src
@@ -179,13 +179,13 @@ ElevateCV AI
 │   ├── src
 │   |    ├── features
 |   |    |     ├── auth
-|   |    |     |    ├── components  
+|   |    |     |    ├── components
 |   |    |     |    ├── hooks
 |   |    |     |    ├── pages
 |   |    |     |    ├── services
 |   |    |     |    └── auth.context.js
 |   |    |     └── interview
-|   |    |          ├── components  
+|   |    |          ├── components
 |   |    |          ├── hooks
 |   |    |          ├── pages
 |   |    |          ├── services
@@ -205,11 +205,11 @@ ElevateCV AI
 ## Clone the Repository
 
 ```bash
-git clone https://github.com/Pratik5767/ElevateCV-AI.git
+git clone https://github.com/Pratik5767/InterviewBlueprint-AI-Interview-Strategy-Generator.git
 ```
 
 ```bash
-cd ElevateCV AI
+cd InterviewBlueprint-AI-Interview-Strategy-Generator
 ```
 
 ## Backend
@@ -250,11 +250,25 @@ GOOGLE_GENAI_API_KEY=your_google_gemini_api_key
 
 > Add screenshots here after deployment.
 
-- 🏠 Home Page
-- 🔑 Login
-- 👤 Register
-- 🤖 AI Report
-- 📊 AI generated Resume
+🔑 Login
+
+<img src="./frontend/src/images/login.png" alt="login" />
+
+👤 Register
+
+<img src="./frontend/src/images/register.png" alt="register" />
+
+🏠 Home Page
+
+<img src="./frontend/src/images/home.png" alt="home" />
+
+🤖 AI Report
+
+<img src="./frontend/src/images/report.png" alt="report" />
+
+📊 AI generated Resume
+
+<img src="./frontend/src/images/resume.png" alt="resume" />
 
 ---
 
@@ -324,7 +338,7 @@ Your support motivates further development and improvements!
 
 <div align="center">
 
-### 💙 Thanks for visiting ElevateCV AI!
+### 💙 Thanks for visiting InterviewBlueprint!
 
 **Empowering careers with Artificial Intelligence.**
 
